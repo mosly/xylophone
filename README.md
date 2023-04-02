@@ -4,4 +4,4 @@ A new Flutter project.
 
 ## Getting Started
 
-learing to create flutter apps
+learning to create flutter apps

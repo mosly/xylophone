@@ -9,6 +9,20 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$wavename.wav');
   }
 
+  Expanded buildKey({Color color, int wavename}) {
+    return Expanded(
+      child: Container(
+        child: TextButton(
+          onPressed: () {
+            playsound(wavename);
+          },
+          child: null,
+        ),
+        color: color,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,104 +33,13 @@ class XylophoneApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: TextButton(
-                      onPressed: () {
-                        playsound(1);
-                      },
-                      child: null,
-                    ),
-                    color: Colors.red,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: TextButton(
-                      onPressed: () {
-                        playsound(2);
-                      },
-                      child: null,
-                    ),
-                    color: Colors.deepOrange,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: TextButton(
-                      onPressed: () {
-                        playsound(3);
-                      },
-                      child: null,
-                    ),
-                    color: Colors.yellowAccent,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: TextButton(
-                      onPressed: () {
-                        playsound(4);
-                      },
-                      child: null,
-                    ),
-                    color: Colors.green,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: TextButton(
-                      onPressed: () {
-                        playsound(5);
-                      },
-                      child: null,
-                    ),
-                    color: Colors.teal,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: TextButton(
-                      onPressed: () {
-                        playsound(6);
-                      },
-                      child: null,
-                    ),
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: TextButton(
-                      onPressed: () {
-                        playsound(7);
-                      },
-                      child: null,
-                    ),
-                    color: Colors.purple,
-                  ),
-                ),
-              ),
+              buildKey(color: Colors.red, wavename: 1),
+              buildKey(color: Colors.deepOrange, wavename: 2),
+              buildKey(color: Colors.yellowAccent, wavename: 3),
+              buildKey(color: Colors.green, wavename: 4),
+              buildKey(color: Colors.teal, wavename: 5),
+              buildKey(color: Colors.blue, wavename: 6),
+              buildKey(color: Colors.purple, wavename: 7),
             ],
           ),
         ),
